@@ -1,27 +1,25 @@
 <script>
 	import Header from './Header.svelte';
+	// import global styles
 	import './styles.css';
 </script>
 
-<div class="app">
+<!--div containing the entire app-->
+<div>
+	<!--import header component here-->
 	<Header />
 
 	<main>
+		<!--slot here is just loading +page.svelte-->
 		<slot />
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>this is the footer</p>
 	</footer>
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
 	main {
 		flex: 1;
 		display: flex;

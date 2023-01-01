@@ -6,14 +6,14 @@
 <header>
 	<nav>
 		<ul>
-			<li style={$page.url.pathname === routes.Home ? 'color: red' : ''}>
-				<a href={routes.Home}>Home</a>
+			<li style={$page.url.pathname === routes.home ? 'color: red' : ''}>
+				<a href={routes.home}>Home</a>
 			</li>
-			<li style={$page.url.pathname === routes.Counter ? 'color: red' : ''}>
-				<a href={routes.Counter}>Counter</a>
+			<li style={$page.url.pathname === routes.counter ? 'color: red' : ''}>
+				<a href={routes.counter}>Counter</a>
 			</li>
-			<li style={$page.url.pathname === routes.About ? 'color: red' : ''}>
-				<a href={routes.About}>About</a>
+			<li style={$page.url.pathname === routes.about ? 'color: red' : ''}>
+				<a href={routes.about}>About</a>
 			</li>
 		</ul>
 	</nav>

@@ -1,3 +1,5 @@
+// chckout https://kit.svelte.dev/docs/load to load data async
+
 import { dev } from '$app/environment';
 
 // we don't need any JS on this page, though we'll load

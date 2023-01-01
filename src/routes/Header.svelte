@@ -1,18 +1,19 @@
 <script>
 	import { page } from '$app/stores';
+	import routes from './routes';
 </script>
 
 <header>
 	<nav>
 		<ul>
-			<li style={$page.url.pathname === '/' ? 'color: red' : ''}>
-				<a href="/">Home</a>
+			<li style={$page.url.pathname === routes.Home ? 'color: red' : ''}>
+				<a href={routes.Home}>Home</a>
 			</li>
-			<li style={$page.url.pathname === '/counter' ? 'color: red' : ''}>
-				<a href="/counter">Counter</a>
+			<li style={$page.url.pathname === routes.Counter ? 'color: red' : ''}>
+				<a href={routes.Counter}>Counter</a>
 			</li>
-			<li style={$page.url.pathname === '/about' ? 'color: red' : ''}>
-				<a href="/about">About</a>
+			<li style={$page.url.pathname === routes.About ? 'color: red' : ''}>
+				<a href={routes.About}>About</a>
 			</li>
 		</ul>
 	</nav>

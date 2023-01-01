@@ -8,7 +8,11 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		paths: {
+			assets: '',
+			base: process.env.BASE_URL
+		}
 	}
 };
 

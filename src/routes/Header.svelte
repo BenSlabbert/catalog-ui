@@ -1,18 +1,20 @@
 <script>
 	import { page } from '$app/stores';
 	import routes from './routes';
+	import EMPTY_STRING from '../lib/constants';
+	const RED = 'color: red';
 </script>
 
 <header>
 	<nav>
 		<ul>
-			<li style={$page.url.pathname === routes.home ? 'color: red' : ''}>
+			<li style={$page.url.pathname === routes.home ? RED : EMPTY_STRING}>
 				<a href={routes.home}>Home</a>
 			</li>
-			<li style={$page.url.pathname === routes.counter ? 'color: red' : ''}>
+			<li style={$page.url.pathname === routes.counter ? RED : EMPTY_STRING}>
 				<a href={routes.counter}>Counter</a>
 			</li>
-			<li style={$page.url.pathname === routes.about ? 'color: red' : ''}>
+			<li style={$page.url.pathname === routes.about ? RED : EMPTY_STRING}>
 				<a href={routes.about}>About</a>
 			</li>
 		</ul>

@@ -25,6 +25,7 @@ export const prerender = false;
 export const load: PageLoad<GetItemsResponse> = async ({ fetch }) => {
 	const resp = await fetch('http://localhost:8080/api/item/all');
 	const data: Item[] = await resp.json();
+	console.log(data);
 	return {
 		items: data
 	};

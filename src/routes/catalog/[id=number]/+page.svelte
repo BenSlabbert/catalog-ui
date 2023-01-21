@@ -6,3 +6,15 @@
 <h1>Item: {data.id}</h1>
 
 <div>id: {data.id} name: {data.name}</div>
+
+<form method="POST">
+	<label>
+		Email
+		<input name="email" type="email" />
+	</label>
+	<label>
+		Password
+		<input name="password" type="password" />
+	</label>
+	<button>Log in</button>
+</form>

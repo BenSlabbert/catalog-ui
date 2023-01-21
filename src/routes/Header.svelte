@@ -11,6 +11,9 @@
 			<li style={$page.url.pathname === routes.home ? RED : EMPTY_STRING}>
 				<a href={routes.home}>Home</a>
 			</li>
+			<li style={$page.url.pathname === routes.catalog ? RED : EMPTY_STRING}>
+				<a href={routes.catalog}>Catalog</a>
+			</li>
 			<li style={$page.url.pathname === routes.counter ? RED : EMPTY_STRING}>
 				<a href={routes.counter}>Counter</a>
 			</li>

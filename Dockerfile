@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY package.json .
 COPY yarn.lock .
-COPY ./build .
-
 RUN yarn --prod
+
+COPY ./build .
 
 CMD ["node", "index.js"]

@@ -2,6 +2,21 @@
 	import Header from './Header.svelte';
 	// import global styles
 	import './styles.css';
+
+	import { navigating } from '$app/stores';
+	import NProgress from 'nprogress';
+	NProgress.configure({
+		// Full list: https://github.com/rstacruz/nprogress#configuration
+		minimum: 0.16
+	});
+	$: {
+		if ($navigating) {
+			NProgress.start();
+		}
+		if (!$navigating) {
+			NProgress.done();
+		}
+	}
 </script>
 
 <!--div containing the entire app-->

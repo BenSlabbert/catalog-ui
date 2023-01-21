@@ -1,7 +1,8 @@
 #!make
 
 .PHONY: build
-build: clean
+build: cleanBuild
+	yarn
 	yarn run build
 
 .PHONY: dockerBuild
@@ -14,7 +15,7 @@ dockerRun:
 
 .PHONY: run
 run: fmt
-	BASE_URL="" BROWSER=opera npm run dev -- --open
+	BASE_URL="" BROWSER=opera yarn run dev --open
 
 .PHONY: fmt
 fmt:
@@ -22,4 +23,8 @@ fmt:
 
 .PHONY: clean
 clean:
+	rm -rf node_modules
+
+.PHONY: cleanBuild
+cleanBuild:
 	rm -rf build

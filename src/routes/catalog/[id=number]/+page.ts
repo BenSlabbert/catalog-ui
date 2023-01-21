@@ -6,6 +6,8 @@ type Item = {
 	name: string;
 };
 
+export type { Item };
+
 // https://kit.svelte.dev/docs/page-options#csr
 // client-side-rendered (CSR) page
 // we don't need any JS on this page, though we'll load

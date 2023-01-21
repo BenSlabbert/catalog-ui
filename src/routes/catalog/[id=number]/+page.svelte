@@ -1,6 +1,6 @@
-<script>
-	/** @type {import("./$types").Item} */
-	export let data;
+<script lang="ts">
+	import type Item from './+page';
+	export let data: Item;
 </script>
 
 <h1>Item: {data.id}</h1>

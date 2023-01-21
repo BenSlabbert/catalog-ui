@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import routes from '../routes';
+	import type GetItemsResponse from './+page';
 
-	/** @type {import("./$types").GetItemsResponse} */
-	export let data;
+	export let data: GetItemsResponse;
 </script>
 
 <h1>Items</h1>

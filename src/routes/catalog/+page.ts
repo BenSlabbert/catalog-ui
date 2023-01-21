@@ -10,6 +10,8 @@ type GetItemsResponse = {
 	items: Item[];
 };
 
+export type { Item, GetItemsResponse };
+
 // https://kit.svelte.dev/docs/page-options#csr
 // client-side-rendered (CSR) page
 // we don't need any JS on this page, though we'll load
@@ -23,7 +25,6 @@ export const prerender = false;
 export const load: PageLoad<GetItemsResponse> = async ({ fetch }) => {
 	const resp = await fetch('http://localhost:8080/api/item/all');
 	const data: Item[] = await resp.json();
-
 	return {
 		items: data
 	};

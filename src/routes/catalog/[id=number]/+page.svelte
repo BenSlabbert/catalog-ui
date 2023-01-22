@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { catalogEdit } from '../../routes';
 	import type Item from './+page';
 	export let data: Item;
 </script>
@@ -7,14 +8,4 @@
 
 <div>id: {data.id} name: {data.name}</div>
 
-<form method="POST">
-	<label>
-		Email
-		<input name="email" type="email" />
-	</label>
-	<label>
-		Password
-		<input name="password" type="password" />
-	</label>
-	<button>Log in</button>
-</form>
+<a href={catalogEdit(data.id)}>edit</a>

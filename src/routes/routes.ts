@@ -8,3 +8,15 @@ const routes = {
 };
 
 export default routes;
+
+export function catalogEdit(id: number): string {
+	return `${routes.catalog}/${id}/edit`;
+}
+
+export function catalogDetails(id: number): string {
+	return `${routes.catalog}/${id}`;
+}
+
+export function catalogCreate(): string {
+	return `${routes.catalog}/create`;
+}

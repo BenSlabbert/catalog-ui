@@ -1,17 +1,18 @@
-import type { Actions, RequestEvent} from './$types';
+import type { Actions } from '@sveltejs/kit';
 import { redirect } from '@sveltejs/kit';
 import routes from '../../routes';
 
 export const actions: Actions = {
-	default: async (event: RequestEvent) => {
-		console.log('running on server');
+	default: async ({ request }) => {
+		console.log('running on server create');
 
-		const data = await event.request.formData();
+		const data = await request.formData();
 		console.log('data', data);
 		const name = data.get('name');
 		console.log('name', name);
 
-		const resp = await fetch(`http://localhost:8080/api/item`, {
+		console.log(`import.meta.env.VITE_API_URL ${import.meta.env.VITE_API_URL}`);
+		const resp = await fetch(`${import.meta.env.VITE_API_URL}/api/item`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -22,7 +23,8 @@ export const actions: Actions = {
 		});
 		const item = await resp.json();
 		console.log('resp from server:', item);
+		console.log('redirecting:', routes.catalog);
 
-		throw redirect(307, routes.catalog);
+		throw redirect(303, '/catalog');
 	}
 };

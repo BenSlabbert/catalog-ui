@@ -4,7 +4,8 @@ const routes = {
 	home: base ? base : '/',
 	catalog: `${base}/catalog`,
 	counter: `${base}/counter`,
-	about: `${base}/about`
+	about: `${base}/about`,
+	enhancedForms: `${base}/enhanced-forms`
 };
 
 export default routes;

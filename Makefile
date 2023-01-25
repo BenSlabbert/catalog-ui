@@ -1,12 +1,17 @@
 #!make
 
-.PHONY: build
-build: cleanBuild
+.PHONY: buildDev
+buildDev: cleanBuild
 	yarn
-	yarn run build
+	yarn run buildDev
+
+.PHONY: buildDocker
+buildDocker: cleanBuild
+	yarn
+	yarn run buildDocker
 
 .PHONY: dockerBuild
-dockerBuild: build
+dockerBuild: buildDocker
 	docker build . -t catalog-ui
 
 .PHONY: dockerRun

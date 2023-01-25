@@ -1,8 +1,11 @@
 #!make
 
-.PHONY: buildDev
-buildDev: cleanBuild
+.PHONY: install
+install:
 	yarn
+
+.PHONY: buildDev
+buildDev: cleanBuild install
 	yarn run buildDev
 
 .PHONY: buildDocker

@@ -1,23 +1,23 @@
-import { base } from '$app/paths';
+import { base } from '$app/paths'
 
 const routes = {
 	home: base ? base : '/',
 	catalog: `${base}/catalog`,
 	counter: `${base}/counter`,
 	about: `${base}/about`,
-	enhancedForms: `${base}/enhanced-forms`
-};
+	enhancedForms: `${base}/enhanced-forms`,
+}
 
-export default routes;
+export default routes
 
 export function catalogEdit(id: number): string {
-	return `${routes.catalog}/${id}/edit`;
+	return `${routes.catalog}/${id}/edit`
 }
 
 export function catalogDetails(id: number): string {
-	return `${routes.catalog}/${id}`;
+	return `${routes.catalog}/${id}`
 }
 
 export function catalogCreate(): string {
-	return `${routes.catalog}/create`;
+	return `${routes.catalog}/create`
 }

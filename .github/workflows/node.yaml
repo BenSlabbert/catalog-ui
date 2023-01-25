@@ -2,7 +2,7 @@ name: Node + Docker builder
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
@@ -14,5 +14,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - run: make lint
+      - run: make check
       - run: make
       - run: make dockerBuild

@@ -1,23 +1,23 @@
 <script lang="ts">
-	import { enhance, type SubmitFunction } from '$app/forms';
-	import type { ActionData } from './$types';
+	import { enhance, type SubmitFunction } from '$app/forms'
+	import type { ActionData } from './$types'
 
-	export let form: ActionData;
-	let loading = false;
+	export let form: ActionData
+	let loading = false
 
 	const processLogin: SubmitFunction = (input) => {
-		loading = true;
+		loading = true
 		// do something before the form submits
-		console.log(input);
-		console.log('loading', loading);
+		console.log(input)
+		console.log('loading', loading)
 
 		return async ({ update }) => {
 			// do something after the form submits
-			loading = false;
-			console.log('loading', loading);
-			await update();
-		};
-	};
+			loading = false
+			console.log('loading', loading)
+			await update()
+		}
+	}
 </script>
 
 <form method="POST" use:enhance={processLogin}>

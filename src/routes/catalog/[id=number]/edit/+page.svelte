@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Item } from './+page.server';
-	export let data: Item;
+	import type { Item } from './+page.server'
+	export let data: Item
 </script>
 
 <form method="POST">

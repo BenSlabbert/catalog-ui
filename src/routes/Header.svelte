@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import routes from './routes';
-	import EMPTY_STRING from '../lib/constants';
-	const RED = 'color: red';
+	import { page } from '$app/stores'
+	import routes from './routes'
+	import EMPTY_STRING from '../lib/constants'
+	const RED = 'color: red'
 </script>
 
 <header>

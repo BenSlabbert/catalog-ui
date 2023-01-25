@@ -26,6 +26,14 @@ run: fmt
 fmt:
 	yarn run format
 
+.PHONY: lint
+lint:
+	yarn run lint
+
+.PHONY: check
+check:
+	yarn run check
+
 .PHONY: clean
 clean:
 	rm -rf node_modules

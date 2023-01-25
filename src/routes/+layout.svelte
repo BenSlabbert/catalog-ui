@@ -1,7 +1,7 @@
 <script>
-	import Header from './Header.svelte';
+	import Header from './Header.svelte'
 	// import global styles
-	import './styles.css';
+	import './styles.css'
 </script>
 
 <!--div containing the entire app-->

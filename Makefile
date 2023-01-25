@@ -9,8 +9,7 @@ buildDev: cleanBuild install
 	yarn run buildDev
 
 .PHONY: buildDocker
-buildDocker: cleanBuild
-	yarn
+buildDocker: cleanBuild install
 	yarn run buildDocker
 
 .PHONY: dockerBuild

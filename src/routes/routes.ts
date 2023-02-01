@@ -6,6 +6,7 @@ const routes = {
 	counter: `${base}/counter`,
 	about: `${base}/about`,
 	enhancedForms: `${base}/enhanced-forms`,
+	search: `${base}/search`,
 }
 
 export default routes

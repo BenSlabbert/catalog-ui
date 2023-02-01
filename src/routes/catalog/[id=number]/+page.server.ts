@@ -7,10 +7,6 @@ type Item = {
 
 export type { Item }
 
-export const csr = false
-export const ssr = true
-export const prerender = false
-
 export const load: PageServerLoad<Item> = async ({ params }) => {
 	console.log(`params: ${params}`)
 	console.log(`import.meta.env.VITE_API_URL ${import.meta.env.VITE_API_URL}`)

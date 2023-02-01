@@ -23,6 +23,9 @@
 			<li style={$page.url.pathname === routes.enhancedForms ? RED : EMPTY_STRING}>
 				<a href={routes.enhancedForms}>enhanced-forms</a>
 			</li>
+			<li style={$page.url.pathname === routes.search ? RED : EMPTY_STRING}>
+				<a href={routes.search}>search</a>
+			</li>
 		</ul>
 	</nav>
 </header>

@@ -11,10 +11,6 @@ type GetItemsResponse = {
 
 export type { Item, GetItemsResponse }
 
-export const csr = false
-export const ssr = true
-export const prerender = false
-
 export const load: PageServerLoad<GetItemsResponse> = async () => {
 	console.log('get all items')
 	console.log(`import.meta.env.VITE_API_URL ${import.meta.env.VITE_API_URL}`)

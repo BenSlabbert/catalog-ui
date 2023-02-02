@@ -1,4 +1,4 @@
-import type { PageServerLoad } from "./$types";
+import type { PageServerLoad } from './$types'
 
 type Result = {
 	id: number
@@ -20,9 +20,11 @@ export const load: PageServerLoad<SearchResult> = async ({ url }) => {
 		}
 	}
 
-  return {
-		items: [{
-      id: 1,
-    }],
+	return {
+		items: [
+			{
+				id: 1,
+			},
+		],
 	}
 }

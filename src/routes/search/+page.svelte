@@ -19,6 +19,6 @@
 
 <div>
 	{#each data.items as item}
-		<div id={item.id}>{item.id}</div>
+		<div id={String(item.id)}>{item.id}</div>
 	{/each}
 </div>

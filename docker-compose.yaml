@@ -11,7 +11,7 @@ services:
       - '5432:5432'
 
   catalog:
-    image: catalog:latest
+    image: item:latest
     environment:
       APP_DB_HOST: 'postgres:5432'
     ports:

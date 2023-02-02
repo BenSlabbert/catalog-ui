@@ -2,6 +2,7 @@ import type { PageServerLoad } from './$types'
 
 type Result = {
 	id: number
+	name: string
 }
 
 type SearchResult = {
@@ -20,11 +21,11 @@ export const load: PageServerLoad<SearchResult> = async ({ url }) => {
 		}
 	}
 
+	const resp = await fetch(`${import.meta.env.VITE_API_URL}/api/item/search?s=${query}&limit=10`)
+
+	const data: Result[] = await resp.json()
+
 	return {
-		items: [
-			{
-				id: 1,
-			},
-		],
+		items: data,
 	}
 }

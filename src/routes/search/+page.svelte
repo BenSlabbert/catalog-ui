@@ -6,10 +6,6 @@
 
 <h1>hello from search!</h1>
 
-<pre>
-  {JSON.stringify(data)}
-</pre>
-
 <form>
 	<label>
 		Search
@@ -19,6 +15,6 @@
 
 <div>
 	{#each data.items as item}
-		<div id={String(item.id)}>{item.id}</div>
+		<div id={String(item.id)}>{item.name}</div>
 	{/each}
 </div>

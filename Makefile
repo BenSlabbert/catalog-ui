@@ -22,7 +22,7 @@ dockerRun:
 
 .PHONY: run
 run: fmt
-	BASE_URL="" BROWSER=opera yarn run dev --open
+	BASE_URL="" BROWSER=firefox yarn run dev --open
 
 .PHONY: fmt
 fmt:

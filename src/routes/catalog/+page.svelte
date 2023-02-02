@@ -6,11 +6,17 @@
 
 <h1>Items</h1>
 
-<a href={catalogCreate()}>create</a>
+<section>
+	<div>
+		<a href={catalogCreate()}>create</a>
+	</div>
+</section>
 
-<div>
+<section>
 	{#each data.items as { id, name }}
-		<p id={`${id}`}>id: {id} name: {name}</p>
-		<a href={catalogDetails(id)}>details</a>
+		<div>
+			<p id={`${id}`}>id: {id} name: {name}</p>
+			<a href={catalogDetails(id)}>details</a>
+		</div>
 	{/each}
-</div>
+</section>

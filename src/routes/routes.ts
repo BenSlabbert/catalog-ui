@@ -7,6 +7,7 @@ const routes = {
 	about: `${base}/about`,
 	enhancedForms: `${base}/enhanced-forms`,
 	search: `${base}/search`,
+	stream: `${base}/stream`,
 }
 
 export default routes

@@ -26,6 +26,9 @@
 			<li style={$page.url.pathname === routes.search ? RED : EMPTY_STRING}>
 				<a href={routes.search}>search</a>
 			</li>
+			<li style={$page.url.pathname === routes.stream ? RED : EMPTY_STRING}>
+				<a href={routes.stream}>stream</a>
+			</li>
 		</ul>
 	</nav>
 </header>

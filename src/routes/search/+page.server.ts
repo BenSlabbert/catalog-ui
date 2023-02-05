@@ -13,7 +13,6 @@ export type { Result, SearchResult }
 
 export const load: PageServerLoad<SearchResult> = async ({ url }) => {
 	const query = url.searchParams.get('q')
-	console.log('q', query)
 
 	if (!query) {
 		return {

@@ -1,5 +1,7 @@
 import type { RequestHandler } from './$types'
 
+export {}
+
 export const GET: RequestHandler = async ({ fetch }) => {
 	// todo need some wha to evaluate if the current session has expired or not?
 	//  maybe do on the source

@@ -29,6 +29,9 @@
 			<li style={$page.url.pathname === routes.stream ? RED : EMPTY_STRING}>
 				<a href={routes.stream}>stream</a>
 			</li>
+			<li style={$page.url.pathname === routes.fm ? RED : EMPTY_STRING}>
+				<a href={routes.fm}>fm</a>
+			</li>
 		</ul>
 	</nav>
 </header>

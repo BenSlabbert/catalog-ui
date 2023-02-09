@@ -8,6 +8,7 @@ const routes = {
 	enhancedForms: `${base}/enhanced-forms`,
 	search: `${base}/search`,
 	stream: `${base}/stream`,
+	fm: `${base}/fm`,
 }
 
 export default routes

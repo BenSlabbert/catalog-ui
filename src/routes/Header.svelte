@@ -30,8 +30,17 @@
 				<a href={routes.stream}>stream</a>
 			</li>
 			<li style={$page.url.pathname === routes.fm ? RED : EMPTY_STRING}>
-				<a href={routes.fm}>fm</a>
+				<a
+					class={$page.url.pathname.startsWith(routes.fm) ? 'disableAnchor' : null}
+					href={routes.fm}>fm</a
+				>
 			</li>
 		</ul>
 	</nav>
 </header>
+
+<style>
+	.disableAnchor {
+		pointer-events: none;
+	}
+</style>

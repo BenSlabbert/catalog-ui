@@ -1,30 +1,51 @@
 <script lang="ts">
-	import type { Path } from './+page'
 	import { onDestroy, onMount } from 'svelte'
+	import routes from '../../routes'
 
-	export let data: Path
+	type App = {
+		$destroy(): void
+		baseUrl: string
+		name: string
+	}
 
-	let app
+	type AppProps = {
+		target: HTMLElement | null
+		props: {
+			name: string
+			baseURL: string
+		}
+	}
+
+	interface AppInt {
+		new (props: AppProps): App
+	}
+
+	const id = 'app'
+	let app: App
+	let loading = true
 
 	onDestroy(() => {
-    console.log('on destroy', app)
 		app?.$destroy()
 	})
 
 	onMount(async () => {
-    console.log('on mount', app)
-		const App = await import('$lib/federatedModuleLoader')
-		const remoteClass = await App.app()
-
-		// set the class on the below div
-		app = new remoteClass({
-			target: document.getElementById('app'),
-			props: { name: 'data', path: data?.path, searchParams: data?.searchParams },
-		})
+		setTimeout(async () => {
+			const App = await import('$lib/federatedModuleLoader')
+			const remoteClass: AppInt = await App.app()
+			console.log('remoteClass', remoteClass)
+			app = new remoteClass({
+				target: document.getElementById(id),
+				props: { name: 'data', baseURL: routes.fm },
+			})
+			console.log('app', app)
+			loading = false
+		}, 1000)
 	})
 </script>
 
-<div id="app" class="whiteBoarder" />
+<div {id} class="whiteBoarder">
+	{loading ? 'loading federated module' : ''}
+</div>
 
 <style>
 	.whiteBoarder {

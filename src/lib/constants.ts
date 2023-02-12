@@ -5,7 +5,7 @@ type APIRoute = {
 export type { APIRoute }
 
 export const API_ROUTES: APIRoute = {
-	stream: '/api/stream',
+	stream: '/api/kit/stream',
 }
 
 const EMPTY_STRING = ''

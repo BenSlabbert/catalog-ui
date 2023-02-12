@@ -7,8 +7,14 @@ calling this in the +layout.svelte loads it when required
 
 <slot></slot>
 */
+import { browser } from '$app/environment'
+
 export async function app() {
-	// @ts-ignore
-	const module = await window.app.get('./App')
-	return module().default
+	if (browser) {
+		// @ts-ignore
+		const module = await window.app.get('./App')
+		return module().default
+	}
+
+	return null
 }

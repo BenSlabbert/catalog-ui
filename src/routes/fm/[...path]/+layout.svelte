@@ -1,5 +1,5 @@
 <svelte:head>
-	<script async src="http://localhost:8081/remoteEntry.js"></script>
+	<script async src={`${import.meta.env.VITE_FM_REMOTE_ENTRY_HOST}/remoteEntry.js`}></script>
 </svelte:head>
 
 <slot />

@@ -29,17 +29,26 @@
 	})
 
 	onMount(async () => {
+		// simulates some latency and handles the case when the component is unmounted before we can mount it
 		setTimeout(async () => {
 			const App = await import('$lib/federatedModuleLoader')
 			const remoteClass: AppInt = await App.app()
 			console.log('remoteClass', remoteClass)
+
+			const element = document.getElementById(id)
+
+			if (!element) {
+				console.warn('cannot find element')
+				return
+			}
+
 			app = new remoteClass({
-				target: document.getElementById(id),
+				target: element,
 				props: { name: 'data', baseURL: routes.fm },
 			})
 			console.log('app', app)
 			loading = false
-		}, 1000)
+		}, 250)
 	})
 </script>
 

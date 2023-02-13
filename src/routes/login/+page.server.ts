@@ -1,6 +1,7 @@
 import type { PageServerLoad } from './$types'
 import { fail, redirect, type Actions } from '@sveltejs/kit'
 import { zfd } from 'zod-form-data'
+import routes from '../routes'
 
 async function sleep(ms: number) {
 	return new Promise((resolve) => setTimeout(resolve, ms))
@@ -8,11 +9,15 @@ async function sleep(ms: number) {
 
 export const load: PageServerLoad = async ({ locals }) => {
 	// redirect user if logged in
-	console.log('login load,locals.user', locals.user)
+	console.log('login load, locals.user', locals.user)
 
 	if (locals.user) {
-		throw redirect(302, '/')
+		console.log('user is already logged in, redirect to', routes.home)
+		throw redirect(303, routes.home)
 	}
+
+	// if not logged in, just render the page
+	console.log('user not logged in, just render login page')
 }
 
 export const actions: Actions = {
@@ -20,7 +25,7 @@ export const actions: Actions = {
 		// redirect user if logged in
 		if (locals.user) {
 			console.log('user logged in already, redirect')
-			throw redirect(302, '/')
+			throw redirect(302, routes.home)
 		}
 
 		await sleep(250)
@@ -46,9 +51,14 @@ export const actions: Actions = {
 			return fail(400, data)
 		}
 
-		cookies.set('sessionId', 'session-123', {
+		const cookie = {
+			name: 'cookie-name',
+			role: 'cookie-role'
+		}
+
+		cookies.set('sessionId', JSON.stringify(cookie), {
 			// send cookie for every page
-			path: '/',
+			path: routes.home,
 			// server side only cookie so you can't use `document.cookie`
 			httpOnly: true,
 			// only requests from same site can send cookies
@@ -61,6 +71,6 @@ export const actions: Actions = {
 		})
 
 		// redirect the user
-		throw redirect(303, '/')
+		throw redirect(303, routes.home)
 	},
 }

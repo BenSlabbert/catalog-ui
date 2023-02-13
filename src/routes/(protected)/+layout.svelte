@@ -5,7 +5,8 @@
 <h1>protected</h1>
 
 {#if $page.data.user}
-	<p>Welcome {$page.data.user.name}!</p>
+<p>name {$page.data.user.name}</p>
+<p>role {$page.data.user.role}</p>
 	<slot />
 {:else}
 	<!-- replace with programatic redirect to login? -->

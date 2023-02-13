@@ -27,12 +27,16 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return Response.redirect(`${import.meta.env.VITE_APP_HOST}${routes.login}`)
 	}
 
+	const cookie = event.cookies.get('sessionId')
+	const c = JSON.parse(cookie ? cookie : '{}');
+	console.log('c', c)
+
 	// if there is a session set the user.locals here
 	// login handler will set the session on the cookie
 	// we can set this from the cookie or get data from another service
 	event.locals.user = {
-		name: 'name',
-		role: 'ROLE',
+		name: c.name,
+		role: c.role,
 	}
 
 	return await resolve(event)
@@ -45,6 +49,6 @@ export const handleFetch: HandleFetch = ({ request, fetch }) => {
 	// handle outgoing server requests
 
 	// server is making an external request
-	console.log('outgoing server request', request)
+	console.log('outgoing server request', request.url)
 	return fetch(request)
 }

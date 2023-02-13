@@ -25,6 +25,6 @@ export const actions: Actions = {
 		console.log('resp from server:', item)
 		console.log('redirecting:', routes.catalog)
 
-		throw redirect(303, '/catalog')
+		throw redirect(303, routes.catalog)
 	},
 }

@@ -1,5 +1,6 @@
 import type { PageServerLoad } from './$types'
 import { redirect, type Actions } from '@sveltejs/kit'
+import routes from '../../../../routes'
 
 type Item = {
 	id: number
@@ -38,6 +39,6 @@ export const actions: Actions = {
 		const item = await resp.json()
 		console.log('resp from server:', item)
 
-		throw redirect(303, '/catalog')
+		throw redirect(303, routes.catalog)
 	},
 }

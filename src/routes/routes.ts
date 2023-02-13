@@ -2,10 +2,10 @@ import { base } from '$app/paths'
 
 const routes = {
 	home: base ? base : '/',
+	login: `${base}/login`,
 	catalog: `${base}/catalog`,
 	counter: `${base}/counter`,
 	about: `${base}/about`,
-	enhancedForms: `${base}/enhanced-forms`,
 	search: `${base}/search`,
 	stream: `${base}/stream`,
 	fm: `${base}/fm`,

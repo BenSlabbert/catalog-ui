@@ -1,23 +1,25 @@
 <script>
-	import Header from './Header.svelte'
+	import Nav from './Nav.svelte'
+	import Footer from './Footer.svelte'
 	// import global styles
 	import './styles.css'
 </script>
 
-<!--div containing the entire app-->
-<div>
-	<!--import header component here-->
-	<Header />
+<svelte:head>
+	<title>Catalog</title>
+</svelte:head>
 
-	<main>
-		<!--slot here is just loading +page.svelte-->
-		<slot />
-	</main>
+<header>
+	<Nav />
+</header>
 
-	<footer>
-		<p>this is the footer</p>
-	</footer>
-</div>
+<main>
+	<slot />
+</main>
+
+<footer>
+	<Footer />
+</footer>
 
 <style>
 	:global(body) {

@@ -2,7 +2,7 @@ import type { Handle, HandleFetch } from '@sveltejs/kit'
 import routes from './routes/routes'
 
 export const handle: Handle = async ({ event, resolve }) => {
-	console.log('handle request')
+	console.log('handle request', event.route)
 
 	// https://kit.svelte.dev/docs/hooks#server-hooks-handle
 	// This function runs every time the SvelteKit server receives a request — whether that happens while the app is running, or during prerendering — and determines the response

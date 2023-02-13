@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { catalogEdit } from '../../../routes'
+	import { catalogEdit } from '../../routes'
 	import type { Item } from './+page.server'
 	export let data: Item
 </script>

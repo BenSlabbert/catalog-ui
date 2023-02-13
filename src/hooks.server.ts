@@ -27,13 +27,14 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return Response.redirect(`${import.meta.env.VITE_APP_HOST}${routes.login}`)
 	}
 
+	// if there is a session set the user.locals here
+	// login handler will set the session on the cookie
+	// we can set this from the cookie or get data from another service
+	// maybe cookie must not have data, just an ID
 	const cookie = event.cookies.get('sessionId')
 	const c = JSON.parse(cookie ? cookie : '{}')
 	console.log('c', c)
 
-	// if there is a session set the user.locals here
-	// login handler will set the session on the cookie
-	// we can set this from the cookie or get data from another service
 	event.locals.user = {
 		name: c.name,
 		role: c.role,

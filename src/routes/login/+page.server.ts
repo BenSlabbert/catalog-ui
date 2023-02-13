@@ -53,7 +53,7 @@ export const actions: Actions = {
 
 		const cookie = {
 			name: 'cookie-name',
-			role: 'cookie-role'
+			role: 'cookie-role',
 		}
 
 		cookies.set('sessionId', JSON.stringify(cookie), {

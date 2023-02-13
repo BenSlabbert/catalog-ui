@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte'
-	import routes from '../../../routes'
+	import routes from '../../routes'
 
 	type App = {
 		$destroy(): void

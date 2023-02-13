@@ -28,7 +28,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	}
 
 	const cookie = event.cookies.get('sessionId')
-	const c = JSON.parse(cookie ? cookie : '{}');
+	const c = JSON.parse(cookie ? cookie : '{}')
 	console.log('c', c)
 
 	// if there is a session set the user.locals here

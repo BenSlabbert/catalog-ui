@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types'
 import { redirect, type Actions } from '@sveltejs/kit'
-import routes from '../../../../routes'
+import routes from '../../../routes'
 
 type Item = {
 	id: number

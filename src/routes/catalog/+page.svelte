@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { catalogDetails, catalogCreate } from '../../routes'
+	import { catalogDetails, catalogCreate } from '../routes'
 	import type { GetItemsResponse } from './+page.server'
 	export let data: GetItemsResponse
 </script>

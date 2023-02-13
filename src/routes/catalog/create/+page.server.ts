@@ -1,6 +1,6 @@
 import type { Actions } from '@sveltejs/kit'
 import { redirect } from '@sveltejs/kit'
-import routes from '../../../routes'
+import routes from '../../routes'
 
 export const actions: Actions = {
 	default: async ({ request, fetch }) => {

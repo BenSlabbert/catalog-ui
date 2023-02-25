@@ -8,6 +8,6 @@ see [Makefile](./Makefile) for details
 - https://github.com/colinhacks/zod
 - https://www.npmjs.com/package/zod-form-data
 
-## TODO
+## Federated Modules
 
-- fix env vars for server
+This app consumes a federated module from https://github.com/BenSlabbert/svelte-app-module-federation-test in [this route](./src/routes/fm/)

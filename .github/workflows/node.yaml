@@ -14,8 +14,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - run: make
       - run: make lint
       - run: make check
-      - run: make
       - run: make buildDev
       - run: make dockerBuild
